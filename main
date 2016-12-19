@@ -1,1 +1,16 @@
-start here
+//start here
+/**
+ * Write a description of class Pokemon here.
+ * 
+ * @author (Jake Bales and Sean Richens) 
+ * @version (12-19-16)
+ */
+public class Pokemon
+{
+   
+   
+   public static void main(String[]args)
+   {
+       System.put.println("Kelson is a derp");
+   }
+}
