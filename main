@@ -7,10 +7,39 @@
  */
 public class Pokemon
 {
-   
-   
+    private String poke1 = "null";
+    private String poke2 = "null";
+    private String poke3 = "null";
+    private String poke4 = "null";
+    private String poke5 = "null";
+    private String poke6 = "null";
+   public static void typeCheck(String upoke, String opoke)
+   {
+       //checks type for upoke
+       String utype = "null";
+       String otype = "null";
+       if(upoke.equals("Bulbasaur"))
+       {
+           
+       }else if(upoke.equals("Charmander"))
+       {
+           
+       }else if(upoke.equals("Squirtle"))
+       {
+           
+       }else if(upoke.equals(""))
+       {
+           
+       }else if(upoke.equals(""))
+       {
+           
+       }else if(upoke.equals(""))
+       {
+           
+       }
+   }
    public static void main(String[]args)
    {
-       System.put.println("Kelson is a derp");
+       
    }
 }
