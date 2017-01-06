@@ -43,3 +43,100 @@ public class Pokemon
        
    }
 }
+//jake changes
+
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ * Write a description of class Pokemon here.
+ * 
+ * @author (Jake Bales and Sean Richens) 
+ * @version (12-19-16)
+ */
+public class Pokemon
+{
+    private String poke1 = "null";
+    private String poke2 = "null";
+    private String poke3 = "null";
+    private String poke4 = "null";
+    private String poke5 = "null";
+    private String poke6 = "null";
+    public static void asciiBulbasaur()
+    {
+        System.out.println("                                            / ");
+        System.out.println("                         _,.------....___,.' ',.-. ");
+        System.out.println("                      ,-'          _,.--'        | ");
+        System.out.println("                    ,'         _.-'              . ");
+        System.out.println("                   /   ,     ,'                   ` ");
+        System.out.println("                  .   /     /                     ``. ");
+        System.out.println("                  |  |     .                       \\.\\ ");
+        System.out.println("        ____      |___._.  |       __               \\ `. ");
+        System.out.println("      .'    `---''       ``'-.--''`  \\               .  \\ ");
+        System.out.println("     .  ,            __               `              |   . ");
+        System.out.println("     `,'         ,-''  .               \\             |    L ");
+        System.out.println("    ,'          '    _.'                -._          /    | ");
+        System.out.println("   ,`-.    ,'.    --'                      >.      ,'     | ");
+        System.out.println("  . .'\\'   `-'       __    ,  ,-.         /  `.__.-      ,' ");
+        System.out.println("  ||:, .           ,'  ;  /  / \\ `        `.    .      .'/ ");
+        System.out.println("  j|:D  \\          `--'  ' ,'_  . .         `.__, \\   , / ");
+        System.out.println(" / L:_  |                 .  '' :_;                `.'.' ");
+        System.out.println(" .    '''                  ''''''                    V ");
+        System.out.println("  `.                                 .    `.   _,..  ` ");
+        System.out.println("    `,_   .    .                _,-'/    .. `,'   __  ` ");
+        System.out.println("     ) \\`._        ___....----''  ,'   .'  \\ |   '  \\  . ");
+        System.out.println("    /   `. '`-.--''         _,' ,'     `---' |    `./  | ");
+        System.out.println("   .   _  `'''--.._____..--'   ,             '         | ");
+        System.out.println("   | .' `. `-.                /-.           /          , ");
+        System.out.println("   | `._.'    `,_            ;  /         ,'          . ");
+        System.out.println("  .'          /| `-.        . ,'         ,           , ");
+        System.out.println("  '-.__ __ _,','    '`-..___;-...__   ,.'\\ ____.___.' ");
+        System.out.println("  `'^--'..'   '-`-^-''--    `-^-'`.'''''''`.,^.`.--' JB ");
+    }
+
+    public static void main(String[]args)
+    {
+        System.out.println("Welcome to the magical world of Pokemon!\nI'm Professor Mahogany! Choose your starter!\n1 - Bulbasaur\n2 - Charmander\n3 - Squirtle");
+    }
+
+    public static void battleSystem()
+    {
+        System.out.println("You're challenging Erika, master of a few grass type Pokemon!");
+        Scanner scan = new Scanner(System.in);
+        int pkmn;
+        System.out.println("Who will you send out? Enter 1 for " + 1 + ", enter 2 for " + 2 + ", and enter 3 for " + 3);
+        do{
+            pkmn = scan.nextInt();
+            if (pkmn == 1)
+            {
+                System.out.println("Go" + poke1 + "!");
+
+            }
+            else if (pkmn == 2)
+            {
+                System.out.println("Go" + poke2 + "!");
+
+            }
+            else if (pkmn == 3)
+            {
+                System.out.println("Go" + poke3 + "!");
+
+            }
+            else if (pknmn == 4)
+            {
+                System.out.println("Go" + poke4 + "!");
+
+            }
+            else if (pkmn == 5)
+            {
+                System.out.println("Go" + poke5 + "!");
+
+            }
+            else if (pkmn == 6)
+            {
+                System.out.println("Go" + poke6 + "!");
+
+            }
+        }while (pkmn > 0 > 7);
+    }
+}
