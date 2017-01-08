@@ -1,8 +1,8 @@
 //start here
 /**
  * Write a description of class Pokemon here.
- * 
- * @author (Jake Bales and Sean Richens) 
+ *
+ * @author (Jake Bales and Sean Richens)
  * @version (12-19-16)
  */
 public class Pokemon
@@ -13,30 +13,100 @@ public class Pokemon
     private String poke4 = "null";
     private String poke5 = "null";
     private String poke6 = "null";
-   public static void typeCheck(String upoke, String opoke)
+   public static boolean typeCheck(String apoke, String dpoke)
    {
-       //checks type for upoke
-       String utype = "null";
-       String otype = "null";
-       if(upoke.equals("Bulbasaur"))
+       String atype = findType(apoke);
+       String dtype = findType(dpoke);
+       boolean adv = false;
+       if(atype.equals("grass"))
        {
-           
-       }else if(upoke.equals("Charmander"))
+           if(dtype.equals("rock"))
+           {
+               adv = true;
+           }else if(dtype.equals("water"))
+           {
+                adv = true;
+           }else
+           {
+               adv = false;
+           }
+       }else if(atype.equals("fire"))
        {
-           
-       }else if(upoke.equals("Squirtle"))
+           if(dtype.equals("grass"))
+           {
+               adv = true;
+           }else
+           {
+               adv = false;
+           }
+       }else if(atype.equals("water"))
        {
-           
-       }else if(upoke.equals(""))
+           if(dtype.equals("rock"))
+           {
+               adv = true;
+           }else if(dtype.equals("fire"))
+           {
+               adv = true;
+           }else
+           {
+               adv = false;
+           }
+       }else if(atype.equals("electric"))
        {
-           
-       }else if(upoke.equals(""))
+           if(dtype.equals("normal"))
+           {
+               adv = true;
+           }else
+           {
+               adv = false;
+           }
+       }else if(atype.equals("rock"))
        {
-           
-       }else if(upoke.equals(""))
+           if(dtype.equals("fire"))
+           {
+               adv = true;
+           }else if (dtype.equals("electric"))
+           {
+               adv = true;
+           }else
+           {
+               adv = false;
+           }
+        }else if(atype.equals("normal"))
+        {
+            if(dtype.equals("electric"))
+            {
+                adv = true;
+            }else
+            {
+                adv = false;
+            }
+        }
+        return adv;
+   }
+   public static String findType(String poke)
+   {
+       String type = "null";
+       if(poke.equals("Bulbasaur"))
        {
-           
+           type = "grass";
+       }else if(poke.equals("Charmander"))
+       {
+           type = "fire";
+       }else if(poke.equals("Squirtle"))
+       {
+           type = "water";
+       }else if(poke.equals("Pikachu"))
+       {
+           type = "electric";
+       }else if(poke.equals("Eevee"))
+       {
+           type = "normal";
+       }else if(poke.equals("Geodude"))
+       {
+           type = "rock";
        }
+       return type;
    }
    public static void main(String[]args)
    {
