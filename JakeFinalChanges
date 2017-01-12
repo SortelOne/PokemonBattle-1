@@ -1,0 +1,210 @@
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+
+Write a description of class Pokemon here.
+
+@author (Jake Bales and Sean Richens)
+
+@version (12-19-16)
+ */
+public class Pokemon
+{
+    private String poke1 = "Bulbasaur";
+    private String poke2 = "Charmander";
+    private String poke3 = "Squirtle";
+    private String poke4 = "Eevee";
+    private String poke5 = "Onix";
+    private String poke6 = "Pikachu";
+    
+    public static String choosePokemoninBattle()
+    {
+        Scanner scan = new Scanner(System.in);
+        int pkmn;
+        String pkmnStringy = "null";
+        String pkmnChoice;
+        System.out.println("Who will you send out?\nEnter 1 for Bulbasaur,\nEnter 2 for Charmander,\nEnter 3 for Squirtle,\n and so on.");
+        do{
+            pkmn = scan.nextInt();
+            if (pkmn == 1)
+            {
+                System.out.println("Go Bulbasaur!");
+                pkmnStringy = "Bulbasaur";
+            }
+            else if (pkmn == 2)
+            {
+                System.out.println("Go Charmander!");
+                pkmnStringy = "Charmander";
+            }
+            else if (pkmn == 3)
+            {
+                System.out.println("Go Squirtle!");
+                pkmnStringy = "Squirtle";
+            }
+            else if (pkmn == 4)
+            {
+                System.out.println("Go Eevee!");
+                pkmnStringy = "Eevee";
+            }
+            else if (pkmn == 5)
+            {
+                System.out.println("Go Onix!");
+                pkmnStringy = "Onix";
+            }
+            else if (pkmn == 6)
+            {
+                System.out.println("Go Pikachu!");
+                pkmnStringy = "Pikachu";
+            }
+            else if (pkmn > 6)
+            {
+                System.out.println("Invalid input, try again. :P");
+            }
+        }while (pkmn > 7);
+        return pkmnStringy;
+    }
+
+    public static void battleSystem(String leader, String leaderType, String leaderPokemon, String recievedPokemon)
+    {
+        Random gen = new Random();
+        Scanner scan = new Scanner(System.in);
+        String enter;
+        System.out.println("You're challenging " + leader + ", master of " + leaderType + " type Pokemon!");
+        System.out.println(leader + " sent out " + leaderPokemon + "!");
+        String leave = "null";
+        int n = 1;
+        int health1 = gen.nextInt(100)+300;
+        int health2 = gen.nextInt(100)+300;
+        do{
+            n = 1+n;
+            int damage1 = gen.nextInt(40)+60;
+            int damage2 = gen.nextInt(40)+60;
+            System.out.println("Your Pokemon has " + health1 + " HP.");
+            System.out.println("Your opponents Pokemon has " + health2 + "HP.");
+            System.out.println("Press Enter if you're ready to attack.");
+            enter = scan.nextLine();
+            System.out.println("Your Pokemon goes first! It did " + damage1 + " damage!");
+            System.out.println("The other Pokem did " + damage2 + " damage to you!");
+            System.out.println("Your Pokemon has " + (health1-damage2) + " HP left.");
+            System.out.println("Your opponents Pokemon has " + (health2-damage1) + " HP left.");
+            System.out.println("Press Enter to advance.");
+            enter = scan.nextLine();
+            health1 = health1-damage2;
+            health2 = health2-damage1;
+        }while(health1 > 0 && health2 > 0);
+        if(health1 > health2)
+        {
+            System.out.println("Congrats! You won! You recieved " + recievedPokemon);
+            System.out.println("Move onto the next battle so you can take down the champion!");
+            return;
+        }
+        else if(health2>health1)
+        {
+            System.out.println("You rushed to a Pokemon Center to protect your Pokemon from further harm.");
+            System.out.println("To try again, type 1. To quit the game, type 2.");
+            leave = scan.nextLine();
+            if (leave.equals("2"))
+            {
+                return;
+            }
+            else if(leave.equals("1"))
+            {
+                battleSystem(leader, leaderType, leaderPokemon, recievedPokemon);
+            }
+        }
+    }
+
+    public static void battleSystemChampion(String leader, String leaderType, String leaderPokemon, String recievedPokemon)
+    {
+        Random gen = new Random();
+        Scanner scan = new Scanner(System.in);
+        String enter;
+        System.out.println("You're challenging " + leader + ", master of " + leaderType + "s!");
+        System.out.println(leader + " sent out " + leaderPokemon + "!");
+        String leave = "null";
+        int n = 1;
+        int health1 = gen.nextInt(100)+300;
+        int health2 = gen.nextInt(100)+300;
+        do{
+            n = 1+n;
+            int damage1 = gen.nextInt(40)+60;
+            int damage2 = gen.nextInt(40)+60;
+            System.out.println("Your Pokemon has " + health1 + " HP.");
+            System.out.println("Your opponents Pokemon has " + health2 + "HP.");
+            System.out.println("Press Enter if you're ready to attack.");
+            enter = scan.nextLine();
+            System.out.println("Your Pokemon goes first! It did " + damage1 + " damage!");
+            System.out.println("The other Pokemon did " + damage2 + " damage to you!");
+            System.out.println("Your Pokemon has " + (health1-damage2) + " HP left.");
+            System.out.println("Your opponents Pokemon has " + (health2-damage1) + " HP left.");
+            System.out.println("Press Enter to advance.");
+            enter = scan.nextLine();
+            health1 = health1-damage2;
+            health2 = health2-damage1;
+        }while(health1 > 0 && health2 > 0);
+        if(health1 > health2)
+        {
+            System.out.println("Congrats! You won!");
+            System.out.println("You are now teh Mastah of da Pokemans!");
+            return;
+        }
+        else if(health2>health1)
+        {
+            System.out.println("You rushed to a Pokemon Center to protect your Pokemon from further harm.");
+            System.out.println("To try again, type 1. To quit the game, type 2.");
+            leave = scan.nextLine();
+            if (leave.equals("2"))
+            {
+                return;
+            }
+            else if(leave.equals("1"))
+            {
+                battleSystem(leader, leaderType, leaderPokemon, recievedPokemon);
+            }
+        }
+    }
+
+    public static void main(String[]args)
+    {
+        Scanner scan = new Scanner(System.in);
+        int in = 0;
+        System.out.println("Enter your name:");
+        String yname = scan.nextLine();
+        System.out.println("Enter your rival's name:");
+        String rname = scan.nextLine();
+        System.out.println("Welcome, " + yname + ", to the magical world of Pokemon! I'm Professor Mahagony.\nEach pokemon has one attack suited to it's type.\nAs such, we will be giving you three to start.\nIt'll be your job to utilize each of their strengths and manage their weaknesses to become victorious in the coming battles.\n(Press Enter to progress...)\n");
+        scan.nextLine();
+        System.out.println("Recieved Bulbasaur!\nRecieved Charmander!\nRecieved Squirtle!");
+        scan.nextLine();
+        System.out.println("You will recieve more as you defeat other trainers. Good luck!");
+        do
+        {
+            System.out.println("Who do you want to battle?\n1 - Whitney\n2 - Brock\n3 - Leutenant Surge\n4 - Champion\n5 - quit");
+            System.out.println("(Preferably go in order. :P)");
+            in = scan.nextInt();
+            scan.nextLine();
+            switch(in)
+            {
+                case 1:
+                choosePokemoninBattle();
+                battleSystem("Whitney", "Normal", "Kangaskhan", "Eevee. Choose 4 in the Pokemon selection to use it!");
+                break;
+                case 2:
+                choosePokemoninBattle();
+                battleSystem("Brock", "Rock", "Golem", "Onix. Choose 4 in the Pokemon selection to use it!");
+                break;
+                case 3:
+                choosePokemoninBattle();
+                battleSystem("Leutenant Surge", "Electric", "Raichu", "Pikachu. Choose 4 in the Pokemon selection to use it!");
+                break;
+                case 4:
+                choosePokemoninBattle();
+                battleSystemChampion(rname, "Magicarp", "Magicarp!", "");
+                break;
+                case 5:
+                return;
+            }
+        }while(in < 4);
+    }
+}
