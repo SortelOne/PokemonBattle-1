@@ -110,6 +110,27 @@ public class Pokemon
    }
    public static void main(String[]args)
    {
-       
+       Scanner scan = new Scanner(System.in);
+       int in = 0;
+       System.out.println("Enter your name:");
+       String yname = scan.nextLine;
+       System.out.println("Enter your rival's name:");
+       String rname = scan.nextLine;
+       System.out.println("Welcome, Pokemon Trainer, to the magical world of Pokemon! I'm Professor Mahagony./nEach pokemon has one attack suited to it's type./nAs such, we will be giving you three to start./nIt'll be your job to utilize each of their strengths and manage their weaknesses to become victorious in the coming battles./n(Press Enter to progress...)/n");
+       scan.nextLine();
+       System.out.println("Recieved Bulbasaur!/nRecieved Charmander!/nRecieved Squirtle!");
+       scan.nextLine();
+       System.out.println("You will recieve more as you defeat other trainers. Good luck!");
+       do
+       {
+           System.out.println("Who do you want to battle?/n1 - Whitney/n2 - Brock/n3 - Leutenant Surge/n4 - Champion/n5 - quit");
+           in = scan.nextInt
+           scan.nextLine();
+           switch(in)
+           {
+               case 1:
+                    battle
+           }
+       }while(in > 4);
    }
 }
