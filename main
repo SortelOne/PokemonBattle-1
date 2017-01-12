@@ -184,3 +184,52 @@ public class Pokemon
             battleSystem();
         }
     }
+
+    public static String choosePokemoninBattle(String leader, String leaderType)
+    {
+        System.out.println("You're challenging " + leader + ", master of " + leaderType + " type Pokemon!");
+        Scanner scan = new Scanner(System.in);
+        int pkmn;
+        String pkmnStringy = "null";
+        String pkmnChoice;
+        System.out.println("Who will you send out?\nEnter 1 for Bulbasaur,\nEnter 2 for Charmander,\nEnter 3 for Squirtle,\n and so on.");
+        do{
+            pkmn = scan.nextInt();
+            if (pkmn == 1)
+            {
+                System.out.println("Go Bulbasaur!");
+                pkmnStringy = "Bulbasaur";
+            }
+            else if (pkmn == 2)
+            {
+                System.out.println("Go Charmander!");
+                pkmnStringy = "Charmander";
+            }
+            else if (pkmn == 3)
+            {
+                System.out.println("Go Squirtle!");
+                pkmnStringy = "Squirtle";
+            }
+            else if (pkmn == 4)
+            {
+                System.out.println("Go Pikachu!");
+                pkmnStringy = "Pikachu";
+            }
+            else if (pkmn == 5)
+            {
+                System.out.println("Go Eevee!");
+                pkmnStringy = "Eevee";
+            }
+            else if (pkmn == 6)
+            {
+                System.out.println("Go Onix!");
+                pkmnStringy = "Onix";
+            }
+            else if (pkmn > 6)
+            {
+                System.out.println("Invalid input, try again. :P");
+            }
+        }while (pkmn > 7);
+        
+        return pkmnStringy;
+    }
