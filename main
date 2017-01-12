@@ -1,1 +1,165 @@
-start here
+//start here
+/**
+ * Write a description of class Pokemon here.
+ *
+ * @author (Jake Bales and Sean Richens)
+ * @version (12-19-16)
+ */
+public class Pokemon
+{
+    private String poke1 = "null";
+    private String poke2 = "null";
+    private String poke3 = "null";
+    private String poke4 = "null";
+    private String poke5 = "null";
+    private String poke6 = "null";
+   public static boolean typeCheck(String apoke, String dpoke)
+   {
+       String atype = findType(apoke);
+       String dtype = findType(dpoke);
+       boolean adv = false;
+       if(atype.equals("grass"))
+       {
+           if(dtype.equals("rock"))
+           {
+               adv = true;
+           }else if(dtype.equals("water"))
+           {
+                adv = true;
+           }else
+           {
+               adv = false;
+           }
+       }else if(atype.equals("fire"))
+       {
+           if(dtype.equals("grass"))
+           {
+               adv = true;
+           }else
+           {
+               adv = false;
+           }
+       }else if(atype.equals("water"))
+       {
+           if(dtype.equals("rock"))
+           {
+               adv = true;
+           }else if(dtype.equals("fire"))
+           {
+               adv = true;
+           }else
+           {
+               adv = false;
+           }
+       }else if(atype.equals("electric"))
+       {
+           if(dtype.equals("normal"))
+           {
+               adv = true;
+           }else
+           {
+               adv = false;
+
+}
+       }else if(atype.equals("rock"))
+       {
+           if(dtype.equals("fire"))
+           {
+               adv = true;
+           }else if (dtype.equals("electric"))
+           {
+               adv = true;
+           }else
+           {
+               adv = false;
+           }
+        }else if(atype.equals("normal"))
+        {
+            if(dtype.equals("electric"))
+            {
+                adv = true;
+            }else
+            {
+                adv = false;
+            }
+        }
+        return adv;
+   }
+   public static String findType(String poke)
+   {
+       String type = "null";
+       if(poke.equals("Bulbasaur"))
+       {
+           type = "grass";
+       }else if(poke.equals("Charmander"))
+       {
+           type = "fire";
+       }else if(poke.equals("Squirtle"))
+       {
+           type = "water";
+       }else if(poke.equals("Pikachu"))
+       {
+           type = "electric";
+       }else if(poke.equals("Eevee"))
+       {
+           type = "normal";
+       }else if(poke.equals("Geodude"))
+       {
+           type = "rock";
+       }
+       return type;
+   }
+   public static void main(String[]args)
+   {
+       
+   }
+}
+
+//Battle System is bascially complete, Sean! Take a look and add what you think needs to be added :)
+
+    public static void battleSystem()
+    {
+        Random gen = new Random();
+        Scanner scan = new Scanner(System.in);
+        String enter;
+        int n = 1;
+        int health1 = gen.nextInt(100)+300;
+        int health2 = gen.nextInt(100)+300;
+        do{
+            n = 1+n;
+            int damage1 = gen.nextInt(40)+60;
+            int damage2 = gen.nextInt(40)+60;
+            System.out.println("Your Pokemon has " + health1 + " HP.");
+            System.out.println("Your opponents Pokemon has " + health2 + "HP.");
+            System.out.println("Press Enter if you're ready to attack.");
+            enter = scan.nextLine();
+            System.out.println("Your Pokemon goes first! It did " + damage1 + " damage!");
+            System.out.println("The other Pokem did " + damage2 + " damage to you!");
+            System.out.println("Your Pokemon has " + (health1-damage2) + " HP left.");
+            System.out.println("Your opponents Pokemon has " + (health2-damage1) + " HP left.");
+            System.out.println("Press Enter to advance.");
+            enter = scan.nextLine();
+            health1 = health1-damage2;
+            health2 = health2-damage1;
+        }while(health1 >= 0 && health2 >= 0);
+        if(health1 > health2)
+        {
+            System.out.println("Congrats! You won!");
+            System.out.println("Move onto the next battle so you can take down the champion!");
+        }
+        else if(health2>health1)
+        {
+            System.out.println("You rushed to a Pokemon Center to protect your Pokemon from further harm.");
+            System.out.println("To try again, type 1. To quit the game, type 2.");
+        }
+        String leave = " ";
+        leave = scan.nextLine();
+        if (leave.equals("2"))
+        {
+            return;
+        }
+        else if(leave.equals("1"))
+        {
+            battleSystem();
+        }
+    }
